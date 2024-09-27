@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Erysonyc Gamer",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -39, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -443.6,
+      "left": 351.2,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -251.6, "left": -374.4, "attrs": {} },
+    { "type": "wokwi-lcd2004", "id": "lcd1", "top": -347.24, "left": -137.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 186.35,
+      "left": -67.2,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "keypad1:R1", "uno:9", "green", [ "v0", "h-326.4" ] ],
+    [ "uno:8", "keypad1:R2", "green", [ "v-105.6", "h0.4" ] ],
+    [ "uno:7", "keypad1:R3", "green", [ "v-96", "h320.4" ] ],
+    [ "keypad1:R4", "uno:6", "green", [ "v28.8", "h-317" ] ],
+    [ "servo1:GND", "uno:GND.1", "black", [ "h-57.6", "v163.2", "h498.9" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h-48", "v422.5", "h533.8" ] ],
+    [ "servo1:PWM", "uno:10", "green", [ "h-38.4", "v134.6", "h517.7" ] ],
+    [ "uno:GND.1", "lcd1:VSS", "black", [ "v-96", "h-182.1" ] ],
+    [ "uno:5V", "lcd1:VDD", "red", [ "v38.3", "h-217" ] ],
+    [ "uno:12", "lcd1:RS", "green", [ "v-105.6", "h-172.6" ] ],
+    [ "uno:GND.1", "lcd1:RW", "black", [ "v-115.2", "h-143.6" ] ],
+    [ "lcd1:E", "uno:11", "green", [ "v57.6", "h162.6" ] ],
+    [ "lcd1:D4", "uno:5", "green", [ "v38.4", "h178.6" ] ],
+    [ "lcd1:D5", "uno:4", "green", [ "h0.1", "v9.6", "h178.5" ] ],
+    [ "lcd1:D6", "uno:3", "green", [ "v19.2", "h178.6" ] ],
+    [ "lcd1:D7", "uno:2", "green", [ "h0.3", "v28.8", "h178.3" ] ],
+    [ "uno:GND.1", "lcd1:K", "black", [ "v0" ] ],
+    [ "uno:5V", "r1:2", "red", [ "v0" ] ],
+    [ "r1:1", "lcd1:A", "green", [ "v-240", "h96.1" ] ],
+    [ "keypad1:C1", "uno:A3", "green", [ "v316.8", "h-288.1" ] ],
+    [ "keypad1:C2", "uno:A2", "green", [ "v326.4", "h-307.2" ] ],
+    [ "keypad1:C3", "uno:A1", "green", [ "v336", "h-326.55" ] ],
+    [ "keypad1:C4", "uno:A0", "green", [ "v345.6", "h-345.9" ] ]
+  ],
+  "dependencies": {}
+}
